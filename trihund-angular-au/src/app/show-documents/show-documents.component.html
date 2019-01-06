@@ -1,0 +1,129 @@
+
+<mat-tab-group *ngIf="showParsedDocuments">
+  <mat-tab *ngFor="let doc of parsedDocumentDetails" label="{{doc.documentType}}">
+    <div *ngIf="doc.documentType === 'Aadhar'">
+      <span class="display">
+        <label for="h3-1">Name:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.name}}</h3>
+      </span>
+      <span class="display">
+        <label for="h3-1">Age:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.age}}</h3>
+      </span>
+      <span class="display">
+        <label for="h3-1">Aadhar Number:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.aadharNumber}}</h3>
+      </span>
+    </div>
+
+
+    <div *ngIf="doc.documentType === 'Driving License'">
+      <span class="display">
+        <label for="h3-1">Name:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.name}}</h3>
+      </span>
+      <span class="display">
+        <label for="h3-1">Age:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.age}}</h3>
+      </span>
+      <span class="display">
+        <label for="h3-1">DL Number:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.dlNumber}}</h3>
+      </span>
+      <span class="display">
+        <label for="h3-1">Vehicle Type:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.vehicleType}}</h3>
+      </span>
+    </div>
+
+
+    <div *ngIf="doc.documentType === 'Passport'">
+      <span class="display">
+        <label for="h3-1">Name:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.name}}</h3>
+      </span>
+      <span class="display">
+        <label for="h3-1">Age:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.age}}</h3>
+      </span>
+      <span class="display">
+        <label for="h3-1">Passport Number:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.passportNumber}}</h3>
+      </span>
+      <span class="display">
+        <label for="h3-1">Validity:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.validity}}</h3>
+      </span>
+    </div>
+
+
+    <div *ngIf="doc.documentType === 'Voter ID'">
+      <span class="display">
+        <label for="h3-1">Name:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.name}}</h3>
+      </span>
+      <span class="display">
+        <label for="h3-1">Age:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.age}}</h3>
+      </span>
+      <span class="display">
+        <label for="h3-1">ID Number:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.idNumber}}</h3>
+      </span>
+    </div>
+
+
+    <div *ngIf="doc.documentType === 'PAN Card'">
+      <span class="display">
+        <label for="h3-1">Name:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.name}}</h3>
+      </span>
+      <span class="display">
+        <label for="h3-1">Age:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.age}}</h3>
+      </span>
+      <span class="display">
+        <label for="h3-1">PAN Number:</label>
+      </span>
+      <span class="display">
+        <h3>{{doc.panNumber}}</h3>
+      </span>
+    </div>
+
+
+  </mat-tab>
+</mat-tab-group>
+
+

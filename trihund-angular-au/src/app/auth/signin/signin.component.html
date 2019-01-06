@@ -1,0 +1,33 @@
+<form class="user-form" [formGroup]="usersGroup">
+  <div class="row">
+    <mat-form-field class="field-container">
+      <mat-label>
+        User Name
+      </mat-label>
+
+      <input matInput type="text" formControlName="userName" required>
+    </mat-form-field>
+  </div>
+
+
+
+  <div class="row">
+    <mat-form-field class="field-container">
+      <mat-label>
+        Password
+      </mat-label>
+
+      <input matInput type="password" formControlName="password" required>
+    </mat-form-field>
+  </div>
+
+  <div class="row">
+    <button class="form-buttons-signin btn btn-success" (click)="captureUserInput()" [disabled]="!usersGroup.valid">
+      Submit
+    </button>
+  </div>
+  </form>
+
+  <div *ngIf='showErrorMessage'  class="message alert alert-danger" role="alert">
+    User Is Not Registered, can't sign in.
+  </div>

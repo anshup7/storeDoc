@@ -1,0 +1,37 @@
+<mat-toolbar [ngClass]="{background: true}">
+  <div class="col-sm-7 col-xs-7 col-md-7">
+    Trihund's Store
+  </div>
+  <div *ngIf="!appAuthService.userSignedIn" class="links col-sm-1 col-xs-1 col-md-1" (click)="openSignInDialog($event)">
+    Sign In
+  </div>
+  <div *ngIf="appAuthService.userSignedIn" class="links col-sm-1 col-xs-1 col-md-1" (click)="logout($event)">
+    Logout
+  </div>
+  <div *ngIf="!appAuthService.userSignedIn" class="links col-sm-1 col-xs-1 col-md-1" (click)="openSignUpDialog($event)">
+    SignUp
+  </div>
+  <div class="links col-sm-1 col-xs-1 col-md-1">
+    Store File
+  </div>
+  <div *ngIf="appAuthService.userSignedIn" (click)="openAddDocDialog($event)" class="links col-sm-1 col-xs-1 col-md-1">
+    Store Doc. Data
+  </div>
+  <span></span>
+</mat-toolbar>
+
+<div class="jumbotron">
+  <h1 class="display-4">Hi There! Welcome to Trihund's Data Saver!</h1>
+  <p class="lead">
+    This is a simple application to store your document Data.
+    We maintain your Identity with respect of the data you store. If you sign in we store your user
+    name and password. Any time you can come back and store data as when you want.
+  </p>
+  <hr class="my-4">
+  <p>Please Sign Up if you are a new user. You can sign in and store data if already registered.</p>
+</div>
+
+
+<app-auth [userLoggedOut]="!appAuthService.userSignedIn"></app-auth>
+<app-show-documents [refreshData]="refreshShowDocumentsData" *ngIf="appAuthService.userSignedIn"></app-show-documents>
+

@@ -1,0 +1,17 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.field-container {
+  width: 100%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+}
+
+
+.form-buttons {
+  margin-left: 66%;
+  width: 73%;
+}
+
+.message {
+  margin-top: 10%;
+}

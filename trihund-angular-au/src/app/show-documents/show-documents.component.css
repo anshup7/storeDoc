@@ -1,0 +1,15 @@
+.display {
+  display: inline-block;
+  margin: 2%;
+}
+
+
+label {
+  font-size: 1.6em;
+}
+
+
+.btn-refresh-settings {
+  margin-left: 93%;
+  margin-bottom: 1%;
+}

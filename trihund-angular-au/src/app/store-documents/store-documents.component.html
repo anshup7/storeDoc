@@ -1,0 +1,239 @@
+<mat-radio-group>
+  <mat-radio-button (click)="radioButtonClicked('aadhar')" class="settings" value="Aadhar">Store Aadhar Details</mat-radio-button>
+  <mat-radio-button (click)="radioButtonClicked('dl')" class="settings" value="Driving License">Store Driving License Details</mat-radio-button>
+  <mat-radio-button (click)="radioButtonClicked('passport')" class="settings" value="Passport">Store Passport Details</mat-radio-button>
+  <mat-radio-button (click)="radioButtonClicked('voterId')" class="settings" value="Voter Id">Store Voter Id Card Details</mat-radio-button>
+  <mat-radio-button (click)="radioButtonClicked('pan')" class="settings" value="PAN">PAN Card Details</mat-radio-button>
+</mat-radio-group>
+
+<div class="container">
+  <form *ngIf="formHandler.showAadharForm" class="user-form" [formGroup]="aadharFormGroup">
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Name
+        </mat-label>
+
+        <input matInput type="text" formControlName="name" required>
+      </mat-form-field>
+    </div>
+
+
+
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Age
+        </mat-label>
+
+        <input matInput type="text" formControlName="age" required>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Aadhar Number
+        </mat-label>
+
+        <input matInput type="text" formControlName="aadharNumber" required>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <button class="form-buttons-store btn btn-success" (click)="captureDocData('aadhar')" [disabled]="!aadharFormGroup.valid">
+        Submit
+      </button>
+    </div>
+  </form>
+
+
+  <form *ngIf="formHandler.showDrivingLicenseForm" class="user-form" [formGroup]="dlFormGroup">
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Name
+        </mat-label>
+
+        <input matInput type="text" formControlName="name" required>
+      </mat-form-field>
+    </div>
+
+
+
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Age
+        </mat-label>
+
+        <input matInput type="text" formControlName="age" required>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Driving License Number
+        </mat-label>
+
+        <input matInput type="text" formControlName="dlNumber" required>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Vehicle Type
+        </mat-label>
+
+        <input matInput type="text" formControlName="vehicleType" required>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <button class="form-buttons-store btn btn-success" (click)="captureDocData('dl')" [disabled]="!dlFormGroup.valid">
+        Submit
+      </button>
+    </div>
+  </form>
+
+
+  <form *ngIf="formHandler.showPassportForm" class="user-form" [formGroup]="passportFormGroup">
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Name
+        </mat-label>
+
+        <input matInput type="text" formControlName="name" required>
+      </mat-form-field>
+    </div>
+
+
+
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Age
+        </mat-label>
+
+        <input matInput type="text" formControlName="age" required>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Passport Number
+        </mat-label>
+
+        <input matInput type="text" formControlName="passportNumber" required>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Valid Through
+        </mat-label>
+
+        <input matInput type="date" formControlName="dateOfExpiry" required>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <button class="form-buttons-store btn btn-success" (click)="captureDocData('passport')" [disabled]="!passportFormGroup.valid">
+        Submit
+      </button>
+    </div>
+  </form>
+
+  <form *ngIf="formHandler.showVoterIdForm" class="user-form" [formGroup]="voterIdFormGroup">
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Name
+        </mat-label>
+
+        <input matInput type="text" formControlName="name" required>
+      </mat-form-field>
+    </div>
+
+
+
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Age
+        </mat-label>
+
+        <input matInput type="text" formControlName="age" required>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Voter ID Number
+        </mat-label>
+
+        <input matInput type="text" formControlName="voterIdNumber" required>
+      </mat-form-field>
+    </div>
+
+
+    <div class="row">
+      <button class="form-buttons-store btn btn-success" (click)="captureDocData('voterId')" [disabled]="!voterIdFormGroup.valid">
+        Submit
+      </button>
+    </div>
+  </form>
+
+
+  <form *ngIf="formHandler.showPanForm" class="user-form" [formGroup]="panFormGroup">
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Name
+        </mat-label>
+
+        <input matInput type="text" formControlName="name" required>
+      </mat-form-field>
+    </div>
+
+
+
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          Age
+        </mat-label>
+
+        <input matInput type="text" formControlName="age" required>
+      </mat-form-field>
+    </div>
+
+    <div class="row">
+      <mat-form-field class="field-container">
+        <mat-label>
+          PAN Number
+        </mat-label>
+
+        <input matInput type="text" formControlName="panNumber" required>
+      </mat-form-field>
+    </div>
+
+
+    <div class="row">
+      <button class="form-buttons-store btn btn-success" (click)="captureDocData('pan')" [disabled]="!panFormGroup.valid">
+        Submit
+      </button>
+    </div>
+  </form>
+
+
+  <div *ngIf='showSuccessMessage' class="col-md-12 col-sm-12 col-xs-12" class="alert alert-success" role="alert">
+    Document Saved Successfuly.
+  </div>
+</div>
